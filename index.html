@@ -180,11 +180,17 @@
     });
     try { localStorage.setItem('portfolio-lang', lang); } catch(e){}
   }
-  // langue initiale : choix mémorisé, sinon langue du navigateur, sinon FR
+  // langue initiale, par ordre de priorité :
+  //   1) paramètre d'URL  ?lang=en  ou  ?lang=fr   (pour partager un lien forcé)
+  //   2) choix mémorisé   3) langue du navigateur   4) FR par défaut
   (function(){
+    var fromUrl = (new URLSearchParams(window.location.search).get('lang') || '').toLowerCase();
     var saved;
     try { saved = localStorage.getItem('portfolio-lang'); } catch(e){}
-    var lang = saved || ((navigator.language || 'fr').toLowerCase().indexOf('en') === 0 ? 'en' : 'fr');
+    var lang;
+    if (fromUrl === 'en' || fromUrl === 'fr')      lang = fromUrl;
+    else if (saved === 'en' || saved === 'fr')     lang = saved;
+    else lang = ((navigator.language || 'fr').toLowerCase().indexOf('en') === 0) ? 'en' : 'fr';
     setLang(lang);
   })();
 </script>

@@ -12,88 +12,93 @@
 </head>
 <body>
 
+<div class="lang-switch">
+  <button class="lang-btn" data-lang="fr" onclick="setLang('fr')">FR</button>
+  <button class="lang-btn" data-lang="en" onclick="setLang('en')">EN</button>
+</div>
+
 <div class="wrap">
 
   <header>
-    <span class="kicker">Freelance ou CDI · Full remote · Dispo immédiate</span>
+    <span class="kicker" data-fr="Freelance ou CDI · Full remote · Dispo immédiate" data-en="Freelance or full-time · Full remote · Available now">Freelance ou CDI · Full remote · Dispo immédiate</span>
     <h1>Fabien Boco</h1>
-    <div class="role">Développeur Full-Stack <span class="hl">React / Python</span> — spécialisé IA / LLM</div>
-    <p class="tagline">Je conçois et livre des applications web full-stack de bout en bout — du backend à l'interface — pour des éditeurs SaaS et des scale-ups. ~10 ans d'expérience, dont des projets critiques pour Airbus &amp; NavBlue, et une spécialisation concrète en IA générative.</p>
+    <div class="role" data-fr="Développeur Full-Stack <span class=&quot;hl&quot;>React / Python</span> — spécialisé IA / LLM" data-en="Full-Stack Developer <span class=&quot;hl&quot;>React / Python</span> — AI / LLM specialist">Développeur Full-Stack <span class="hl">React / Python</span> — spécialisé IA / LLM</div>
+    <p class="tagline" data-fr="Je conçois et livre des applications web full-stack de bout en bout — du backend à l'interface — pour des éditeurs SaaS et des scale-ups. ~10 ans d'expérience, dont des projets critiques pour Airbus &amp; NavBlue, et une spécialisation concrète en IA générative." data-en="I design and ship full-stack web applications end to end — from backend to interface — for SaaS companies and scale-ups. ~10 years of experience, including mission-critical projects for Airbus &amp; NavBlue, and a hands-on specialization in generative AI.">Je conçois et livre des applications web full-stack de bout en bout — du backend à l'interface — pour des éditeurs SaaS et des scale-ups. ~10 ans d'expérience, dont des projets critiques pour Airbus &amp; NavBlue, et une spécialisation concrète en IA générative.</p>
     <div class="meta">
       <span class="chip">📍 France · Europe/Paris</span>
       <span class="chip">🌐 Full remote</span>
-      <span class="chip">🧭 ~10 ans d'XP</span>
-      <span class="chip">🤝 Freelance ou CDI</span>
+      <span class="chip" data-fr="🧭 ~10 ans d'XP" data-en="🧭 ~10 yrs exp.">🧭 ~10 ans d'XP</span>
+      <span class="chip" data-fr="🤝 Freelance ou CDI" data-en="🤝 Freelance or full-time">🤝 Freelance ou CDI</span>
     </div>
     <div class="cta">
-      <a class="btn primary" href="mailto:fabien.boco@gmail.com">✉ Me contacter</a>
+      <a class="btn primary" href="mailto:fabien.boco@gmail.com" data-fr="✉ Me contacter" data-en="✉ Contact me">✉ Me contacter</a>
       <a class="btn" href="https://www.linkedin.com/in/fabien-boco/" target="_blank" rel="noopener">in · LinkedIn</a>
     </div>
   </header>
 
   <section id="stack">
-    <div class="sec-head"><span class="num">01</span><h2>Stack technique</h2></div>
+    <div class="sec-head"><span class="num">01</span><h2 data-fr="Stack technique" data-en="Tech stack">Stack technique</h2></div>
     <div class="stack">
       <div class="block"><div class="bh">Frontend &amp; Mobile</div><div class="tags"><span class="tag">React</span><span class="tag">React Native</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">Remotion</span><span class="tag">WebGL</span></div></div>
       <div class="block"><div class="bh">Backend &amp; Data</div><div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Django</span><span class="tag">FastAPI</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">REST · JWT</span></div></div>
-      <div class="block"><div class="bh">IA / LLM</div><div class="tags"><span class="tag">OpenAI</span><span class="tag">Anthropic</span><span class="tag">Agents</span><span class="tag">RAG</span><span class="tag">Whisper</span><span class="tag">Vector DB</span></div></div>
-      <div class="block"><div class="bh">Infra &amp; Outils</div><div class="tags"><span class="tag">Docker</span><span class="tag">CI/CD</span><span class="tag">Git</span><span class="tag">Bare-metal</span><span class="tag">.NET / C#</span><span class="tag">Unity</span></div></div>
+      <div class="block"><div class="bh" data-fr="IA / LLM" data-en="AI / LLM">IA / LLM</div><div class="tags"><span class="tag">OpenAI</span><span class="tag">Anthropic</span><span class="tag">Agents</span><span class="tag">RAG</span><span class="tag">Whisper</span><span class="tag">Vector DB</span></div></div>
+      <div class="block"><div class="bh" data-fr="Infra &amp; Outils" data-en="Infra &amp; Tools">Infra &amp; Outils</div><div class="tags"><span class="tag">Docker</span><span class="tag">CI/CD</span><span class="tag">Git</span><span class="tag">Bare-metal</span><span class="tag">.NET / C#</span><span class="tag">Unity</span></div></div>
     </div>
   </section>
 
   <section id="projets">
-    <div class="sec-head"><span class="num">02</span><h2>Produits &amp; réalisations</h2></div>
+    <div class="sec-head"><span class="num">02</span><h2 data-fr="Produits &amp; réalisations" data-en="Work &amp; projects">Produits &amp; réalisations</h2></div>
     <div class="grid">
 
       <a class="card" href="https://netprix.fr" target="_blank" rel="noopener">
         <div class="ch"><h3>Netprix</h3><span class="badge">SaaS · Data</span></div>
         <div class="body">
-          <p>Optimisation e-commerce pour PrestaShop : pilotage des marges, pricing dynamique et scoring de leads dans une interface décisionnelle.</p>
+          <p data-fr="Optimisation e-commerce pour PrestaShop : pilotage des marges, pricing dynamique et scoring de leads dans une interface décisionnelle." data-en="E-commerce optimization for PrestaShop: margin control, dynamic pricing and lead scoring in a decision-making dashboard.">Optimisation e-commerce pour PrestaShop : pilotage des marges, pricing dynamique et scoring de leads dans une interface décisionnelle.</p>
           <div class="tags"><span>React</span><span>Supabase</span><span>Pricing engine</span></div>
           <span class="go">netprix.fr →</span>
         </div>
       </a>
 
       <a class="card" href="https://ytcopycat.com" target="_blank" rel="noopener">
-        <div class="ch"><h3>YT Copycat</h3><span class="badge">SaaS · IA</span></div>
+        <div class="ch"><h3>YT Copycat</h3><span class="badge" data-fr="SaaS · IA" data-en="SaaS · AI">SaaS · IA</span></div>
         <div class="body">
-          <p>Repurposing de contenu : transforme des vidéos YouTube en articles &amp; newsletters, avec digest email et pipeline de publication WordPress.</p>
+          <p data-fr="Repurposing de contenu : transforme des vidéos YouTube en articles &amp; newsletters, avec digest email et pipeline de publication WordPress." data-en="Content repurposing: turns YouTube videos into articles &amp; newsletters, with an email digest and a WordPress publishing pipeline.">Repurposing de contenu : transforme des vidéos YouTube en articles &amp; newsletters, avec digest email et pipeline de publication WordPress.</p>
           <div class="tags"><span>Python</span><span>React</span><span>LLM</span></div>
           <span class="go">ytcopycat.com →</span>
         </div>
       </a>
 
       <a class="card" href="https://bookwitch.io" target="_blank" rel="noopener">
-        <div class="ch"><h3>BookWitch</h3><span class="badge">SaaS · IA</span></div>
+        <div class="ch"><h3>BookWitch</h3><span class="badge" data-fr="SaaS · IA" data-en="SaaS · AI">SaaS · IA</span></div>
         <div class="body">
-          <p>Création d'ebooks pilotée par LLM : du plan aux chapitres jusqu'à l'assemblage final, via un éditeur structuré.</p>
+          <p data-fr="Création d'ebooks pilotée par LLM : du plan aux chapitres jusqu'à l'assemblage final, via un éditeur structuré." data-en="LLM-driven ebook creation: from outline to chapters to final assembly, through a structured editor.">Création d'ebooks pilotée par LLM : du plan aux chapitres jusqu'à l'assemblage final, via un éditeur structuré.</p>
           <div class="tags"><span>Python</span><span>React</span><span>LLM</span></div>
           <span class="go">bookwitch.io →</span>
         </div>
       </a>
 
       <a class="card" href="https://hypnotype.app" target="_blank" rel="noopener">
-        <div class="ch"><h3>Hypnotype</h3><span class="badge">SaaS · IA</span></div>
+        <div class="ch"><h3>Hypnotype</h3><span class="badge" data-fr="SaaS · IA" data-en="SaaS · AI">SaaS · IA</span></div>
         <div class="body">
-          <p>Génération de vidéos texte cinématiques à partir d'audio : transcription synchronisée et rendu vidéo programmatique.</p>
+          <p data-fr="Génération de vidéos texte cinématiques à partir d'audio : transcription synchronisée et rendu vidéo programmatique." data-en="Cinematic text-video generation from audio: synced transcription and programmatic video rendering.">Génération de vidéos texte cinématiques à partir d'audio : transcription synchronisée et rendu vidéo programmatique.</p>
           <div class="tags"><span>Python</span><span>React</span><span>Remotion</span></div>
           <span class="go">hypnotype.app →</span>
         </div>
       </a>
 
       <a class="card" href="https://echonote.xyz" target="_blank" rel="noopener">
-        <div class="ch"><h3>EchoNote</h3><span class="badge">Mobile · IA</span></div>
+        <div class="ch"><h3>EchoNote</h3><span class="badge" data-fr="Mobile · IA" data-en="Mobile · AI">Mobile · IA</span></div>
         <div class="body">
-          <p>Application mobile de notes vocales : transforme la voix en notes structurées, to-do et résumés exploitables.</p>
+          <p data-fr="Application mobile de notes vocales : transforme la voix en notes structurées, to-do et résumés exploitables." data-en="Voice-notes mobile app: turns speech into structured notes, to-dos and usable summaries.">Application mobile de notes vocales : transforme la voix en notes structurées, to-do et résumés exploitables.</p>
           <div class="tags"><span>Python</span><span>React Native</span><span>LLM</span></div>
           <span class="go">echonote.xyz →</span>
         </div>
       </a>
 
       <a class="card" href="https://echo-write.com" target="_blank" rel="noopener">
-        <div class="ch"><h3>EchoWrite</h3><span class="badge">Desktop · IA</span></div>
+        <div class="ch"><h3>EchoWrite</h3><span class="badge" data-fr="Desktop · IA" data-en="Desktop · AI">Desktop · IA</span></div>
         <div class="body">
-          <p>Application desktop Windows de transcription temps réel, avec moteur double (local / cloud) et post-traitement par LLM.</p>
+          <p data-fr="Application desktop Windows de transcription temps réel, avec moteur double (local / cloud) et post-traitement par LLM." data-en="Windows desktop app for real-time transcription, with a dual engine (local / cloud) and LLM post-processing.">Application desktop Windows de transcription temps réel, avec moteur double (local / cloud) et post-traitement par LLM.</p>
           <div class="tags"><span>.NET / C#</span><span>Transcription</span><span>LLM</span></div>
           <span class="go">echo-write.com →</span>
         </div>
@@ -103,18 +108,18 @@
   </section>
 
   <section id="parcours">
-    <div class="sec-head"><span class="num">03</span><h2>Parcours</h2></div>
+    <div class="sec-head"><span class="num">03</span><h2 data-fr="Parcours" data-en="Background">Parcours</h2></div>
     <div class="tl">
 
       <div class="row">
-        <div class="when"><span class="dot"></span>2023 → auj.</div>
+        <div class="when"><span class="dot"></span><span data-fr="2023 → auj." data-en="2023 → now">2023 → auj.</span></div>
         <div>
-          <h3>Développeur Full-Stack — Remote</h3>
-          <div class="co">Indépendant</div>
+          <h3 data-fr="Développeur Full-Stack — Remote" data-en="Full-Stack Developer — Remote">Développeur Full-Stack — Remote</h3>
+          <div class="co" data-fr="Indépendant" data-en="Self-employed">Indépendant</div>
           <ul>
-            <li>Conception &amp; développement d'apps web SaaS full-stack orientées IA/LLM, livrées de A à Z (front React, back Python/Node, PostgreSQL).</li>
-            <li>Intégration de LLM en production : agents autonomes, RAG, pipelines de traitement de contenu, transcription &amp; génération.</li>
-            <li>Mission client e-commerce (Netprix) : pricing dynamique &amp; scoring de leads sur PrestaShop.</li>
+            <li data-fr="Conception &amp; développement d'apps web SaaS full-stack orientées IA/LLM, livrées de A à Z (front React, back Python/Node, PostgreSQL)." data-en="Design &amp; development of full-stack SaaS web apps with an AI/LLM focus, shipped end to end (React front, Python/Node back, PostgreSQL).">Conception &amp; développement d'apps web SaaS full-stack orientées IA/LLM, livrées de A à Z (front React, back Python/Node, PostgreSQL).</li>
+            <li data-fr="Intégration de LLM en production : agents autonomes, RAG, pipelines de traitement de contenu, transcription &amp; génération." data-en="LLM integration in production: autonomous agents, RAG, content-processing pipelines, transcription &amp; generation.">Intégration de LLM en production : agents autonomes, RAG, pipelines de traitement de contenu, transcription &amp; génération.</li>
+            <li data-fr="Mission client e-commerce (Netprix) : pricing dynamique &amp; scoring de leads sur PrestaShop." data-en="E-commerce client project (Netprix): dynamic pricing &amp; lead scoring on PrestaShop.">Mission client e-commerce (Netprix) : pricing dynamique &amp; scoring de leads sur PrestaShop.</li>
           </ul>
         </div>
       </div>
@@ -125,8 +130,8 @@
           <h3>XR Engineer — Remote</h3>
           <div class="co">6Freedom</div>
           <ul>
-            <li>Applications VR de formation (premiers secours sur HTC Focus 3, sécurité incendie) et avatar conversationnel 3D temps réel (STT/TTS, lip-sync).</li>
-            <li>Moteur d'animation de l'assistant virtuel embarqué d'un nouveau modèle Renault ; prototype VR de dépistage ophtalmologique.</li>
+            <li data-fr="Applications VR de formation (premiers secours sur HTC Focus 3, sécurité incendie) et avatar conversationnel 3D temps réel (STT/TTS, lip-sync)." data-en="VR training apps (first aid on HTC Focus 3, fire safety) and a real-time 3D conversational avatar (STT/TTS, lip-sync).">Applications VR de formation (premiers secours sur HTC Focus 3, sécurité incendie) et avatar conversationnel 3D temps réel (STT/TTS, lip-sync).</li>
+            <li data-fr="Moteur d'animation de l'assistant virtuel embarqué d'un nouveau modèle Renault ; prototype VR de dépistage ophtalmologique." data-en="Animation engine for the in-car virtual assistant of a new Renault model; VR prototype for eye-screening.">Moteur d'animation de l'assistant virtuel embarqué d'un nouveau modèle Renault ; prototype VR de dépistage ophtalmologique.</li>
           </ul>
         </div>
       </div>
@@ -137,8 +142,8 @@
           <h3>Software Engineer</h3>
           <div class="co">Capgemini — Toulouse</div>
           <ul>
-            <li><b>NavBlue</b> : application critique d'aide à la navigation aérienne pour pilotes (positionnement temps réel, cartes 3D d'aéroports, plans de vol) — lead compatibilité cross-platform.</li>
-            <li><b>Airbus</b> : R3, le SDK Unity interne standard pour tout le dev AR/VR de la division ; maintenance guidée en AR sur HoloLens 2.</li>
+            <li data-fr="&lt;b&gt;NavBlue&lt;/b&gt; : application critique d'aide à la navigation aérienne pour pilotes (positionnement temps réel, cartes 3D d'aéroports, plans de vol) — lead compatibilité cross-platform." data-en="&lt;b&gt;NavBlue&lt;/b&gt;: mission-critical air-navigation app for pilots (real-time positioning, 3D airport maps, flight plans) — cross-platform compatibility lead."><b>NavBlue</b> : application critique d'aide à la navigation aérienne pour pilotes (positionnement temps réel, cartes 3D d'aéroports, plans de vol) — lead compatibilité cross-platform.</li>
+            <li data-fr="&lt;b&gt;Airbus&lt;/b&gt; : R3, le SDK Unity interne standard pour tout le dev AR/VR de la division ; maintenance guidée en AR sur HoloLens 2." data-en="&lt;b&gt;Airbus&lt;/b&gt;: R3, the internal standard Unity SDK for all AR/VR development across the division; AR-guided maintenance on HoloLens 2."><b>Airbus</b> : R3, le SDK Unity interne standard pour tout le dev AR/VR de la division ; maintenance guidée en AR sur HoloLens 2.</li>
           </ul>
         </div>
       </div>
@@ -146,8 +151,8 @@
       <div class="row">
         <div class="when"><span class="dot"></span>2011 → 2016</div>
         <div>
-          <h3>Master Génie Logiciel</h3>
-          <div class="co">Université Toulouse III — Paul Sabatier</div>
+          <h3 data-fr="Master Génie Logiciel" data-en="Master's in Software Engineering">Master Génie Logiciel</h3>
+          <div class="co" data-fr="Université Toulouse III — Paul Sabatier" data-en="University of Toulouse III — Paul Sabatier">Université Toulouse III — Paul Sabatier</div>
         </div>
       </div>
 
@@ -158,10 +163,31 @@
 
 <footer>
   <div class="wrap">
-    <div>© 2026 Fabien Boco · Full-Stack React / Python · IA/LLM</div>
+    <div data-fr="© 2026 Fabien Boco · Full-Stack React / Python · IA/LLM" data-en="© 2026 Fabien Boco · Full-Stack React / Python · AI/LLM">© 2026 Fabien Boco · Full-Stack React / Python · IA/LLM</div>
     <div><a href="mailto:fabien.boco@gmail.com">fabien.boco@gmail.com</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/fabien-boco/" target="_blank" rel="noopener">LinkedIn →</a></div>
   </div>
 </footer>
+
+<script>
+  function setLang(lang){
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-fr][data-en]').forEach(function(el){
+      var val = el.getAttribute(lang === 'en' ? 'data-en' : 'data-fr');
+      if (val !== null) el.innerHTML = val;
+    });
+    document.querySelectorAll('.lang-btn').forEach(function(b){
+      b.classList.toggle('active', b.getAttribute('data-lang') === lang);
+    });
+    try { localStorage.setItem('portfolio-lang', lang); } catch(e){}
+  }
+  // langue initiale : choix mémorisé, sinon langue du navigateur, sinon FR
+  (function(){
+    var saved;
+    try { saved = localStorage.getItem('portfolio-lang'); } catch(e){}
+    var lang = saved || ((navigator.language || 'fr').toLowerCase().indexOf('en') === 0 ? 'en' : 'fr');
+    setLang(lang);
+  })();
+</script>
 
 </body>
 </html>

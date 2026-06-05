@@ -9,8 +9,8 @@
      Change juste ces valeurs pour tester d'autres ambiances.
      (Astuce dark mode rapide : --paper foncé + --ink clair.)
      =============================================================== */
-  --paper:  #F5F1E8;   /* Fond de page (couleur "papier")            */
-  --accent: #FFD400;   /* Couleur principale : highlights, boutons,  */
+  --paper:  #ffffff;   /* Fond de page (couleur "papier")            */
+  --accent: #61dfff;   /* Couleur principale : highlights, boutons,  */
                        /*   badges, puces (le jaune actuel)          */
   --ink:    #141414;   /* Texte principal + bordures + ombres        */
   --muted:  #5B5B57;   /* Texte secondaire (dates, sous-titres)      */
@@ -101,5 +101,12 @@ footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;
   font-family:var(--mono);font-size:12.5px;color:var(--muted)}
 footer a{font-weight:700;color:var(--ink);border-bottom:2px solid var(--accent)}
 
-@media(max-width:640px){.tl .row{grid-template-columns:1fr;gap:6px}}
-@media print{ body{background:#fff} .cta,.btn{box-shadow:none} .card,.block{box-shadow:none;break-inside:avoid} }
+/* language switch (FR / EN) */
+.lang-switch{position:fixed;top:16px;right:16px;z-index:50;display:flex;border:var(--bd3);box-shadow:var(--sh-sm);background:var(--white)}
+.lang-btn{font-family:var(--mono);font-weight:700;font-size:12.5px;padding:7px 12px;cursor:pointer;border:none;
+  background:transparent;color:var(--ink);text-transform:uppercase;line-height:1}
+.lang-btn+.lang-btn{border-left:var(--bd)}
+.lang-btn.active{background:var(--accent)}
+
+@media(max-width:640px){.tl .row{grid-template-columns:1fr;gap:6px}.lang-switch{top:10px;right:10px}}
+@media print{ body{background:#fff} .cta,.btn,.lang-switch{box-shadow:none} .lang-switch{display:none} .card,.block{box-shadow:none;break-inside:avoid} }

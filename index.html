@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fabien Boco — Développeur Full-Stack React / Python · IA/LLM</title>
+<meta name="description" content="Développeur full-stack React / Python, spécialisé IA/LLM. ~10 ans d'expérience, dont Airbus & NavBlue. Full remote, freelance ou CDI.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* =================================================================
+   DESIGN SYSTEM — "NEO-CV"  (néo-brutaliste sobre, light)
+   -----------------------------------------------------------------
+   Principe : un CV, pas une landing. Lisibilité d'abord, vibe ensuite.
+   - Couleurs : papier + encre + UN accent jaune (le reste noir/blanc)
+   - Bordures : 2–3px solides encre · rayon 0 · ombres offset nettes
+   - Typo     : Space Grotesk (texte, lisible) · Space Mono (petits labels)
+   - Couleur = ponctuation (accent jaune ciblé), pas décor partout
+   ================================================================= */
+:root{
+  --paper:#F5F1E8; --ink:#141414; --white:#FFFFFF; --accent:#FFD400; --muted:#5b5b57;
+  --bd:2px solid var(--ink); --bd3:3px solid var(--ink);
+  --sh:5px 5px 0 var(--ink); --sh-sm:3px 3px 0 var(--ink);
+  --ui:'Space Grotesk',-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  --mono:'Space Mono',ui-monospace,monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--ui);background-color:var(--paper);background-image:url('diagonal-noise.png');background-repeat:repeat;background-size:140px;color:var(--ink);line-height:1.6;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;padding:0 24px}
+a{color:inherit;text-decoration:none}
+
+/* primitives */
+.eyebrow{font-family:var(--mono);font-weight:700;text-transform:uppercase;letter-spacing:.08em;font-size:12px;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-weight:700;font-size:13.5px;
+  padding:11px 17px;border:var(--bd3);background:var(--white);color:var(--ink);box-shadow:var(--sh-sm);
+  transition:transform .08s ease,box-shadow .08s ease}
+.btn:hover{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
+.btn.primary{background:var(--accent)}
+.chip{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:12.5px;font-weight:700;
+  background:var(--white);border:var(--bd);padding:6px 11px}
+
+/* header / identity */
+header{padding:56px 0 30px}
+.kicker{display:inline-block;font-family:var(--mono);font-weight:700;text-transform:uppercase;letter-spacing:.05em;
+  font-size:12px;background:var(--accent);border:var(--bd);padding:6px 11px;box-shadow:var(--sh-sm)}
+h1{font-size:clamp(40px,7vw,62px);font-weight:700;line-height:1.02;letter-spacing:-.025em;margin:18px 0 8px}
+.role{font-size:clamp(19px,3vw,24px);font-weight:600;line-height:1.3}
+.role .hl{background:var(--accent);box-shadow:2px 2px 0 var(--ink);padding:0 6px;white-space:nowrap}
+.tagline{color:#2b2b29;max-width:620px;margin-top:16px;font-size:16.5px}
+.meta{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.cta{display:flex;flex-wrap:wrap;gap:11px;margin-top:24px}
+
+/* sections */
+section{padding:34px 0;border-top:var(--bd)}
+.sec-head{display:flex;align-items:center;gap:12px;margin-bottom:22px}
+.sec-head .num{font-family:var(--mono);font-weight:700;font-size:12px;background:var(--ink);color:var(--paper);padding:4px 9px}
+.sec-head h2{font-size:22px;font-weight:700;letter-spacing:-.01em}
+
+/* stack */
+.stack{display:grid;grid-template-columns:repeat(auto-fit,minmax(195px,1fr));gap:16px}
+.block{background:var(--white);border:var(--bd);box-shadow:var(--sh)}
+.block .bh{font-family:var(--mono);font-weight:700;font-size:12.5px;text-transform:uppercase;letter-spacing:.03em;
+  background:var(--ink);color:var(--paper);padding:9px 13px}
+.block .tags{display:flex;flex-wrap:wrap;gap:7px;padding:13px}
+.tag{font-family:var(--mono);font-size:11.5px;font-weight:700;background:var(--paper);border:var(--bd);padding:3px 8px}
+
+/* projects */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(255px,1fr));gap:18px}
+.card{background:var(--white);border:var(--bd);box-shadow:var(--sh);display:flex;flex-direction:column;
+  transition:transform .08s ease,box-shadow .08s ease}
+.card:hover{transform:translate(-2px,-2px);box-shadow:8px 8px 0 var(--ink)}
+.card .ch{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:13px 15px;border-bottom:var(--bd)}
+.card .ch h3{font-size:17px;font-weight:700;letter-spacing:-.01em}
+.card .badge{font-family:var(--mono);font-weight:700;font-size:10.5px;text-transform:uppercase;background:var(--accent);
+  border:var(--bd);padding:3px 7px;white-space:nowrap}
+.card .body{padding:15px;display:flex;flex-direction:column;flex:1}
+.card .body p{font-size:14px;color:#2b2b29;flex:1;margin-bottom:13px}
+.card .tags{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:13px}
+.card .tags span{font-family:var(--mono);font-size:10.5px;font-weight:700;background:var(--paper);border:var(--bd);padding:2px 6px}
+.card .go{font-family:var(--mono);font-weight:700;font-size:12px;align-self:flex-start;border-bottom:2px solid var(--ink);padding-bottom:1px}
+
+/* experience */
+.tl{display:flex;flex-direction:column;gap:0}
+.tl .row{display:grid;grid-template-columns:150px 1fr;gap:20px;padding:20px 0;border-bottom:var(--bd)}
+.tl .row:last-child{border-bottom:none;padding-bottom:4px}
+.tl .when{font-family:var(--mono);font-weight:700;font-size:13px;color:var(--muted)}
+.tl .when .dot{display:inline-block;width:11px;height:11px;background:var(--accent);border:var(--bd);margin-right:8px;vertical-align:middle}
+.tl h3{font-size:17px;font-weight:700}
+.tl .co{font-family:var(--mono);font-weight:700;font-size:13px;color:var(--muted);margin:3px 0 9px}
+.tl ul{list-style:none}
+.tl li{position:relative;padding-left:18px;margin:5px 0;font-size:14.5px;color:#2b2b29}
+.tl li::before{content:"▪";position:absolute;left:0;color:var(--ink)}
+
+/* footer */
+footer{border-top:var(--bd3);margin-top:6px}
+footer .wrap{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;padding:24px 24px;
+  font-family:var(--mono);font-size:12.5px;color:var(--muted)}
+footer a{font-weight:700;color:var(--ink);border-bottom:2px solid var(--accent)}
+
+@media(max-width:640px){.tl .row{grid-template-columns:1fr;gap:6px}}
+@media print{ body{background:#fff} .cta,.btn{box-shadow:none} .card,.block{box-shadow:none;break-inside:avoid} }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+
+  <header>
+    <span class="kicker">Freelance ou CDI · Full remote · Dispo immédiate</span>
+    <h1>Fabien Boco</h1>
+    <div class="role">Développeur Full-Stack <span class="hl">React / Python</span> — spécialisé IA / LLM</div>
+    <p class="tagline">Je conçois et livre des applications web full-stack de bout en bout — du backend à l'interface — pour des éditeurs SaaS et des scale-ups. ~10 ans d'expérience, dont des projets critiques pour Airbus &amp; NavBlue, et une spécialisation concrète en IA générative.</p>
+    <div class="meta">
+      <span class="chip">📍 France · Europe/Paris</span>
+      <span class="chip">🌐 Full remote</span>
+      <span class="chip">🧭 ~10 ans d'XP</span>
+      <span class="chip">🤝 Freelance ou CDI</span>
+    </div>
+    <div class="cta">
+      <a class="btn primary" href="mailto:fabien.boco@gmail.com">✉ Me contacter</a>
+      <a class="btn" href="https://www.linkedin.com/in/fabien-boco/" target="_blank" rel="noopener">in · LinkedIn</a>
+    </div>
+  </header>
+
+  <section id="stack">
+    <div class="sec-head"><span class="num">01</span><h2>Stack technique</h2></div>
+    <div class="stack">
+      <div class="block"><div class="bh">Frontend &amp; Mobile</div><div class="tags"><span class="tag">React</span><span class="tag">React Native</span><span class="tag">TypeScript</span><span class="tag">JavaScript</span><span class="tag">Remotion</span><span class="tag">WebGL</span></div></div>
+      <div class="block"><div class="bh">Backend &amp; Data</div><div class="tags"><span class="tag">Python</span><span class="tag">Flask</span><span class="tag">Django</span><span class="tag">FastAPI</span><span class="tag">Node.js</span><span class="tag">PostgreSQL</span><span class="tag">REST · JWT</span></div></div>
+      <div class="block"><div class="bh">IA / LLM</div><div class="tags"><span class="tag">OpenAI</span><span class="tag">Anthropic</span><span class="tag">Agents</span><span class="tag">RAG</span><span class="tag">Whisper</span><span class="tag">Vector DB</span></div></div>
+      <div class="block"><div class="bh">Infra &amp; Outils</div><div class="tags"><span class="tag">Docker</span><span class="tag">CI/CD</span><span class="tag">Git</span><span class="tag">Bare-metal</span><span class="tag">.NET / C#</span><span class="tag">Unity</span></div></div>
+    </div>
+  </section>
+
+  <section id="projets">
+    <div class="sec-head"><span class="num">02</span><h2>Produits &amp; réalisations</h2></div>
+    <div class="grid">
+
+      <a class="card" href="https://netprix.fr" target="_blank" rel="noopener">
+        <div class="ch"><h3>Netprix</h3><span class="badge">SaaS · Data</span></div>
+        <div class="body">
+          <p>Optimisation e-commerce pour PrestaShop : pilotage des marges, pricing dynamique et scoring de leads dans une interface décisionnelle.</p>
+          <div class="tags"><span>React</span><span>Supabase</span><span>Pricing engine</span></div>
+          <span class="go">netprix.fr →</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://ytcopycat.com" target="_blank" rel="noopener">
+        <div class="ch"><h3>YT Copycat</h3><span class="badge">SaaS · IA</span></div>
+        <div class="body">
+          <p>Repurposing de contenu : transforme des vidéos YouTube en articles &amp; newsletters, avec digest email et pipeline de publication WordPress.</p>
+          <div class="tags"><span>Python</span><span>React</span><span>LLM</span></div>
+          <span class="go">ytcopycat.com →</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://bookwitch.io" target="_blank" rel="noopener">
+        <div class="ch"><h3>BookWitch</h3><span class="badge">SaaS · IA</span></div>
+        <div class="body">
+          <p>Création d'ebooks pilotée par LLM : du plan aux chapitres jusqu'à l'assemblage final, via un éditeur structuré.</p>
+          <div class="tags"><span>Python</span><span>React</span><span>LLM</span></div>
+          <span class="go">bookwitch.io →</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://hypnotype.app" target="_blank" rel="noopener">
+        <div class="ch"><h3>Hypnotype</h3><span class="badge">SaaS · IA</span></div>
+        <div class="body">
+          <p>Génération de vidéos texte cinématiques à partir d'audio : transcription synchronisée et rendu vidéo programmatique.</p>
+          <div class="tags"><span>Python</span><span>React</span><span>Remotion</span></div>
+          <span class="go">hypnotype.app →</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://echonote.xyz" target="_blank" rel="noopener">
+        <div class="ch"><h3>EchoNote</h3><span class="badge">Mobile · IA</span></div>
+        <div class="body">
+          <p>Application mobile de notes vocales : transforme la voix en notes structurées, to-do et résumés exploitables.</p>
+          <div class="tags"><span>Python</span><span>React Native</span><span>LLM</span></div>
+          <span class="go">echonote.xyz →</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://echo-write.com" target="_blank" rel="noopener">
+        <div class="ch"><h3>EchoWrite</h3><span class="badge">Desktop · IA</span></div>
+        <div class="body">
+          <p>Application desktop Windows de transcription temps réel, avec moteur double (local / cloud) et post-traitement par LLM.</p>
+          <div class="tags"><span>.NET / C#</span><span>Transcription</span><span>LLM</span></div>
+          <span class="go">echo-write.com →</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section id="parcours">
+    <div class="sec-head"><span class="num">03</span><h2>Parcours</h2></div>
+    <div class="tl">
+
+      <div class="row">
+        <div class="when"><span class="dot"></span>2023 → auj.</div>
+        <div>
+          <h3>Développeur Full-Stack — Remote</h3>
+          <div class="co">Indépendant</div>
+          <ul>
+            <li>Conception &amp; développement d'apps web SaaS full-stack orientées IA/LLM, livrées de A à Z (front React, back Python/Node, PostgreSQL).</li>
+            <li>Intégration de LLM en production : agents autonomes, RAG, pipelines de traitement de contenu, transcription &amp; génération.</li>
+            <li>Mission client e-commerce (Netprix) : pricing dynamique &amp; scoring de leads sur PrestaShop.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="when"><span class="dot"></span>2022 → 2024</div>
+        <div>
+          <h3>XR Engineer — Remote</h3>
+          <div class="co">6Freedom</div>
+          <ul>
+            <li>Applications VR de formation (premiers secours sur HTC Focus 3, sécurité incendie) et avatar conversationnel 3D temps réel (STT/TTS, lip-sync).</li>
+            <li>Moteur d'animation de l'assistant virtuel embarqué d'un nouveau modèle Renault ; prototype VR de dépistage ophtalmologique.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="when"><span class="dot"></span>2016 → 2022</div>
+        <div>
+          <h3>Software Engineer</h3>
+          <div class="co">Capgemini — Toulouse</div>
+          <ul>
+            <li><b>NavBlue</b> : application critique d'aide à la navigation aérienne pour pilotes (positionnement temps réel, cartes 3D d'aéroports, plans de vol) — lead compatibilité cross-platform.</li>
+            <li><b>Airbus</b> : R3, le SDK Unity interne standard pour tout le dev AR/VR de la division ; maintenance guidée en AR sur HoloLens 2.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="when"><span class="dot"></span>2011 → 2016</div>
+        <div>
+          <h3>Master Génie Logiciel</h3>
+          <div class="co">Université Toulouse III — Paul Sabatier</div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div>© 2026 Fabien Boco · Full-Stack React / Python · IA/LLM</div>
+    <div><a href="mailto:fabien.boco@gmail.com">fabien.boco@gmail.com</a> &nbsp;·&nbsp; <a href="https://www.linkedin.com/in/fabien-boco/" target="_blank" rel="noopener">LinkedIn →</a></div>
+  </div>
+</footer>
+
+</body>
+</html>
